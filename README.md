@@ -1,55 +1,77 @@
-# EDS 220 - Assignment 1, tasks 2 and 3
+# Exploring Environmental Datasets with Pandas: Coral Reef Diversity and Global Earthquakes
 
-This repository contains materials for the first assignment for the course [EDS 220 - Working with Environmental Datasets](https://meds-eds-220.github.io/MEDS-eds-220-course/). This course is part of the [UCSB Masters in Environmental Data Science](https://bren.ucsb.edu/masters-programs/master-environmental-data-science).
+## About
 
-## Assignment instructions
-Complete instructions for this assignment are in [the course website](https://meds-eds-220.github.io/MEDS-eds-220-course/assignments/assignment1.html).
+This repository contains data analysis notebooks examining patterns in coral reef diversity and global seismic activity using fundamental data science techniques. The project analyzes coral cover and genera distribution across Western Indian Ocean reef environments, and explores magnitude, location, and depth patterns of earthquakes recorded globally in 2014.
 
-## Notebook instructions
-The notebooks `hwk1-task2-corals.ipynb` and `hwk1-task3-earthquakes.ipynb` have exercises for practicing fundamental tabular data exploration, wrangling, and visualization using `pandas`. Each notebook contains detailed instructions on how to complete the exercises.  
+The project demonstrates:
+- Data loading and initial exploration with pandas
+- DataFrame subsetting and filtering techniques
+- Multi-condition data selection and boolean indexing
+- Missing data identification and handling
+- Statistical summarization of environmental datasets
+- Visualization techniques including histograms, bar charts, and geospatial scatter plots
+- Reproducible data science workflow practices
 
-## Rubric
+This work was completed as part of EDS 220 - Working with Environmental Datasets in the UCSB Master of Environmental Data Science program.
 
-Please [review the rubric for these tasks](https://docs.google.com/document/d/131OnUDOLpOl94SlaMU9nGqT998ABrjFS/edit?usp=sharing&ouid=111507336322611936333&rtpof=true&sd=true) before starting your work. 
+## Repository Structure
+eds220-hwk1/
+│
+├── task2/                                    # Coral diversity analysis
+│   ├── hwk1-task2-corals-Miller.ipynb        # Coral diversity analysis notebook
+│   ├── data/                                 # Coral dataset and test data
+│   │   └── coral_data.csv                    
+│   └── tests/                                # Otter grader test files
+│
+├── task3/                                    # Earthquake data analysis
+│   ├── hwk1-task3-earthquakes-Miller.ipynb   # Earthquake analysis notebook
+│   ├── data/                                 # Earthquake dataset and test data
+│   │   └── earthquake_data.csv               
+│   └── tests/                                # Otter grader test files
+│
+├── README.md                                 # This file
+└── License.txt                               # Repository license
 
-## Otter Grader Checks
-These notebooks utilize the `otter` library and have self contained checks within the notebooks to ensure you are on the right track. Follow the steps below to run the otter grader checks. 
+## Data
 
-1. Run the very first cell of the notebook that contains the  ""#Initialize Otter" comment.
-2. Fill in code where the notebook instructs you to do so. 
-3. When you encounter a `gracer.check()` cell, like the image below, run the cell. Doing so will either return an emoji with the text "q# passed!", or it will tell you the test did not pass. If your test did not pass, try rereading the prompt and making sure your output is what you would expect.
+### Data Sources
 
-<img width="717" height="99" alt="Screenshot 2025-09-30 at 2 16 07 PM" src="https://github.com/user-attachments/assets/7d76e82a-3c5e-4630-bcf5-c25e26bf5ee7" />
+**Western Indian Ocean Coral Diversity**
+Rapid assessment survey data on coral cover and number of genera in the Western Indian Ocean, collected to sample coral bleaching events. The dataset includes reef characteristics, environmental conditions (SST, pH, salinity), and observer metadata across 575 observations spanning 1998-2022.
 
+**USGS Earthquake Database**
+Seismic event records from 2014 maintained by the United States Geological Survey. The dataset contains 120,108 total seismic events with spatial information (latitude, longitude, depth), magnitude measurements, timing, and descriptive location data.
 
-4. The very last cell of the notebook contains a cell with `grader_check_all()`. This runs all tests in the notebook and reports the tests that have passed as well as the ones that have failed. Be sure to run this cell! Ideally, your output will look like the following (question numbers may differ). 
+### Data Access
 
-<img width="825" height="471" alt="Screenshot 2025-09-30 at 1 15 25 PM" src="https://github.com/user-attachments/assets/e0a030a7-cce5-4901-b501-bfc2f86120ed" />
+The datasets used in this analysis are **included** in this repository within the respective `task2/data/` and `task3/data/` directories for analysis purposes.
 
+**Original data sources:**
+- **Coral Diversity**: Available from the Knowledge Network for Biocomplexity (KNB) at https://doi.org/10.5063/F1K35S3H
+- **Earthquake Data**: Current earthquake data can be accessed through the USGS Earthquake Search interface at https://earthquake.usgs.gov/earthquakes/search/
 
-## Submission instructions
-**All tasks for this assignment should be submitted via Gradescope.** Make sure you double-check your submission to ensure it satisfies all the items in this checklist:
+## Requirements
 
-- [ ] Answers for tasks 2 and 3 must be submitted as .ipynb files (Jupyter Notebooks) to Gradescope, *not* a PDF or other format.
-- [ ] Ensure your notebooks include a link to your assignment's GitHub repository in the designated section.
-- [ ] The notebooks you submit must have your solutions to the exercises, They *should not be the blank template notebooks*. 
-- [ ] The notebooks you submit must include your code *and* all required rendered plots, graphs, and printed output. Run all cells before submitting your .ipynb file and make sure all the outputs are visible.
-- [ ] Double-check that each notebook or PDF is uploaded to the correct task on Gradescope. 
+This analysis requires Python 3.x with the following packages:
+- `pandas` - Tabular data manipulation and analysis
+- `matplotlib` - Data visualization
+- `otter-grader` - Automated testing and grading
 
-**Resubmissions after the due date due to not satisfying one of the checks above will be strictly held to the course's 50%-regrade resubmission policy (see syllabus).**
+## References
 
-If you have any questions, please reach out to the TA or instructor by 5 pm on the day before the assignment is due.
+McClanahan, T. (2023). *Western Indian Ocean Coral Diversity* [Data set]. Knowledge Network for Biocomplexity. https://doi.org/10.5063/F1K35S3H
 
-## Repository Contents
-     └── task2  
-        └── data                          # Contains the data used in the analysis, as well as all data used for the tests       
-        └── tests                         # Contains a .py file for each test
-        └── hwk1-task2-corals.ipynb       # The empty .ipynb for task 2                                               
-     └── task3          
-        └── data                          # Contains the data used in the analysis, as well as all data used for the tests
-        └── tests                         # Contains a .py file for each test
-        └── hwk1-task3-earthquakes.ipynb  # The empty .ipynb for task 3
-  
-      └── README.md
-      └── License.txt
+U.S. Geological Survey. (2014). *USGS Earthquake Database* [Data set]. Retrieved from https://earthquake.usgs.gov/earthquakes/search/
 
+Abernathey, R., & Key, K. (2021). *Earth and Environmental Data Science*. https://earth-env-data-science.github.io/intro.html
+
+Wingate, C. (2024). *EDS 220: Working with environmental datasets* [Course materials]. Master of Environmental Data Science, Bren School of Environmental Science & Management, University of California, Santa Barbara. https://meds-eds-220.github.io/MEDS-eds-220-course/
+
+## License
+
+This project is licensed under the terms included in the License.txt file.
+
+---
+
+*This project is part of the curriculum for the Master of Environmental Data Science program at the Bren School of Environmental Science & Management, UC Santa Barbara.*
